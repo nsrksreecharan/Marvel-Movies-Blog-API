@@ -1,7 +1,5 @@
 const express=require("express");
 const bcrypt=require("bcrypt");
-const dotenv=require("dotenv");
-dotenv.config();
 const jwt=require("jsonwebtoken");
 const crypto=require("crypto");
 const multer=require("multer");
