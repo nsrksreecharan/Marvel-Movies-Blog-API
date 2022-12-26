@@ -17,7 +17,7 @@ const PORT=process.env.PORT || 5003;
 
 let db=null;
 let Username;
-var mongoURL=process.env.MONGOURI || "mongodb+srv://sreecharan:charan104@cluster0.qykslvr.mongodb.net/?retryWrites=true&w=majority"
+var mongoURL=process.env.MONGOURI 
 
 
 
@@ -54,20 +54,6 @@ const connectMongodbDatabase=async(request,response)=>{
 connectMongodbDatabase()
 
 
-app.get("/",async (req,response)=>{
-    
-    const connection =db.collection("movies");
-    let movies;
-    await connection.find().toArray((err,res)=>{
-        if(err){
-            res.status(400);
-            response.send(`Movies Data Not Found! ${err}`);
-        }
-        movies=res;
-        response.send(movies);
-    });
-    
-});
 
 //  Creating Storage
 var storage = new GridFsStorage({
@@ -169,7 +155,6 @@ app.post("/login",async(request,response)=>{
 })
 
 
-/*
 
 //  Authenitacte JWT Token Middleware Created by N S R K Sree Charan
 
@@ -421,4 +406,3 @@ app.delete("/movies/comment/:film/:id",authenticateToken,async(request,response)
         response.send("Invalid Request!");
     }
 })
-*/
