@@ -17,7 +17,7 @@ const PORT=process.env.PORT || 5003;
 
 let db=null;
 let Username;
-var mongoURL="mongodb+srv://sreecharan:charan104@cluster0.qykslvr.mongodb.net/?retryWrites=true&w=majority"
+var mongoURL=process.env.MONGOURI || "mongodb+srv://sreecharan:charan104@cluster0.qykslvr.mongodb.net/?retryWrites=true&w=majority"
 
 
 
@@ -43,6 +43,7 @@ const connectMongodbDatabase=async(request,response)=>{
     try{
        var client=await MongoClient.connect(mongoURL,{useNewUrlParser:true})
     db=client.db("marvelMovies");
+    app.listen(process.env.PORT || 4001,()=>console.log(`Server is running at ${PORT}`))
     console.log("Connected to mongodb");
         }catch(error){
         console.log(`DB Error:${error.message}`);
@@ -50,23 +51,22 @@ const connectMongodbDatabase=async(request,response)=>{
     }
 }
 
+connectMongodbDatabase()
 
 
-app.listen(process.env.PORT || 4001,()=>console.log(`Server is running at ${PORT}`))
-
-app.get("/",async (req,res)=>{
-    connectMongodbDatabase()
+app.get("/",async (req,response)=>{
+    
     const connection =db.collection("movies");
     let movies;
     await connection.find().toArray((err,res)=>{
         if(err){
-            response.status(400);
+            res.status(400);
             response.send(`Movies Data Not Found! ${err}`);
         }
         movies=res;
+        response.send(movies);
     });
     
-    res.send(movies);
 });
 
 //  Creating Storage
