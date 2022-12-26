@@ -54,9 +54,18 @@ const connectMongodbDatabase=async(request,response)=>{
 
 app.listen(process.env.PORT || 4001,()=>console.log(`Server is running at ${PORT}`))
 
-app.get("/",(req,res)=>{
+app.get("/",async (req,res)=>{
     connectMongodbDatabase()
-    res.send("Connected");
+    const connection =db.collection("movies");
+    let movies;
+    await connection.find().toArray((err,res)=>{
+        if(err){
+            response.status(400);
+            response.send(`Movies Data Not Found! ${err}`);
+        }
+        movies=res;
+        response.send(movies);
+    });
 });
 
 //  Creating Storage
