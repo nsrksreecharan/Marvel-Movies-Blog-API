@@ -55,6 +55,8 @@ const connectMongodbDatabase=async(request,response)=>{
 
 connectMongodbDatabase()
 
+
+/*
 //  Creating Storage
 
 var storage = new GridFsStorage({
@@ -405,3 +407,4 @@ app.delete("/movies/comment/:film/:id",authenticateToken,async(request,response)
         response.send("Invalid Request!");
     }
 })
+*/
