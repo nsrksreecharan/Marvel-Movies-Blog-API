@@ -50,11 +50,12 @@ const connectMongodbDatabase=async(request,response)=>{
     }
 }
 
-connectMongodbDatabase()
+
 
 app.listen(process.env.PORT || 4001,()=>console.log(`Server is running at ${PORT}`))
 
 app.get("/",(req,res)=>{
+    connectMongodbDatabase()
     res.send("Connected");
 });
 
