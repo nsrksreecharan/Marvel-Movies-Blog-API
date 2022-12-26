@@ -14,7 +14,7 @@ const app=express();
 app.use(express.json());
 
 const PORT=process.env.PORT || 5003;
-/*
+
 let db=null;
 let Username;
 var mongoURL="mongodb+srv://sreecharan:charan104@cluster0.qykslvr.mongodb.net/?retryWrites=true&w=majority"
@@ -51,7 +51,7 @@ const connectMongodbDatabase=async(request,response)=>{
 }
 
 connectMongodbDatabase()
-*/
+
 app.listen(process.env.PORT || 4001,()=>console.log(`Server is running at ${PORT}`))
 
 app.get("/",(req,res)=>{
