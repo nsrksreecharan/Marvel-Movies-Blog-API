@@ -4,6 +4,9 @@ const app=express();
 
 const PORT=process.env.PORT || 5003;
 
-app.use("/api/products",product);
+app.get("/",(req,res)=>{
+    res.send("jai ganesha");
+});
+
 
 app.listen(PORT,()=>console.log(`Server is running at ${PORT}`));
