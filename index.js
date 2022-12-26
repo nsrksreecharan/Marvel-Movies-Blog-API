@@ -64,8 +64,9 @@ app.get("/",async (req,res)=>{
             response.send(`Movies Data Not Found! ${err}`);
         }
         movies=res;
-        response.send(movies);
+        
     });
+    response.send(movies);
 });
 
 //  Creating Storage
