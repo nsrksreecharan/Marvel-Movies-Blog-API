@@ -17,7 +17,7 @@ const PORT=process.env.PORT || 5003;
 
 let db=null;
 let Username;
-var mongoURL=process.env.MONGOURI 
+var mongoURL=process.env.MONGODB_URI
 
 
 
