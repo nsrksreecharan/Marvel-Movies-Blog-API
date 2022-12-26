@@ -19,8 +19,8 @@ const PORT=process.env.PORT || 5003;
 
 let db=null;
 let Username;
-var mongoURL=process.env.MONGOURI
-console.log(mongoURL);
+var mongoURL="mongodb+srv://sreecharan:charan104@cluster0.qykslvr.mongodb.net/?retryWrites=true&w=majority"
+
 
 
 // GridFs And GridFsBucket Variable which can be used while Storing and Displaying Image
