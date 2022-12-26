@@ -1,0 +1,26 @@
+{
+  "name": "sampleproject1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node":"14.x"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsrksreecharan/sampleProject1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nsrksreecharan/sampleProject1/issues"
+  },
+  "homepage": "https://github.com/nsrksreecharan/sampleProject1#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
