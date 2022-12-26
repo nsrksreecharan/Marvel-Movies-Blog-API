@@ -55,7 +55,9 @@ const connectMongodbDatabase=async(request,response)=>{
 
 connectMongodbDatabase()
 
-
+app.get("/",(req,res)=>{
+    res.send("Connected");
+});
 /*
 //  Creating Storage
 
