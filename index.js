@@ -57,9 +57,8 @@ app.listen(process.env.PORT || 4001,()=>console.log(`Server is running at ${PORT
 app.get("/",(req,res)=>{
     res.send("Connected");
 });
-/*
-//  Creating Storage
 
+//  Creating Storage
 var storage = new GridFsStorage({
     url: mongoURL,
     file: (req, file) => {
@@ -157,6 +156,9 @@ app.post("/login",async(request,response)=>{
         }
     }
 })
+
+
+/*
 
 //  Authenitacte JWT Token Middleware Created by N S R K Sree Charan
 
