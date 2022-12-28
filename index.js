@@ -11,11 +11,11 @@ const {GridFsStorage}=require("multer-gridfs-storage");
 const path=require("path");
 const { ObjectId } = require("mongodb");
 const app=express();
-const corsOptions = {
-    origin: "http://localhost:3004"
-  };
-  
-  app.use(cors(corsOptions));
+app.use((req, res, next) => { 
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'); 
+    next(); 
+}); 
 
 app.use(express.json());
 
