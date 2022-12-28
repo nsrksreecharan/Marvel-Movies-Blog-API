@@ -1,6 +1,7 @@
 const express=require("express");
 const bcrypt=require("bcrypt");
 const jwt=require("jsonwebtoken");
+const cors=require("cors");
 const crypto=require("crypto");
 const multer=require("multer");
 const mongoose=require("mongoose");
@@ -10,6 +11,11 @@ const {GridFsStorage}=require("multer-gridfs-storage");
 const path=require("path");
 const { ObjectId } = require("mongodb");
 const app=express();
+const corsOptions = {
+    origin: "http://localhost:3004"
+  };
+  
+  app.use(cors(corsOptions));
 
 app.use(express.json());
 
