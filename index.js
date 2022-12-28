@@ -166,7 +166,7 @@ app.post("/login",async(request,response)=>{
 
 const authenticateToken=(request,response,next)=>{
     let jwtToken;
-    const authHeader=request.headers["authorization"];
+    const authHeader=request.headers["Authorization"];
     if(authHeader!==undefined){
         jwtToken=authHeader.split(" ")[1];
     }
