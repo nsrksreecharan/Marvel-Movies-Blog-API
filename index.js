@@ -204,7 +204,7 @@ app.get("/profile_image",authenticateToken,async(request,response)=>{
                     
                     fileBuffer=Buffer.concat([fileBuffer,chunk]);
                 });
-                response.setHeader("Content-Type",file.contentType);
+                response.setHeader("Content-Type",`${file.contentType}`);
                 response.send(fileBuffer);
             }
             else{
