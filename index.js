@@ -13,7 +13,7 @@ const { ObjectId } = require("mongodb");
 const app=express();
 app.use((req, res, next) => { 
     res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept,Authorization'); 
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept,authorization'); 
     next(); 
 }); 
 
@@ -166,7 +166,7 @@ app.post("/login",async(request,response)=>{
 
 const authenticateToken=(request,response,next)=>{
     let jwtToken;
-    const authHeader=request.headers["Authorization"];
+    const authHeader=request.headers["authorization"];
     if(authHeader!==undefined){
         jwtToken=authHeader.split(" ")[1];
     }
