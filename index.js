@@ -199,10 +199,7 @@ app.get("/profile_image",authenticateToken,async(request,response)=>{
         if(file!==null){
             if(file.contentType==="image/png"||file.contentType==="image/jpg"||file.contentType==="image/jpeg"){
                 const readStream = gridfsBucket.openDownloadStream(file._id);
-                const url=window.URL.createObjectURL(readStream.pipe(Blob([],{type:'application/octet-stream'})));
-                response.json({
-                    url,
-                });
+                readStream.pipe(response);
             }
             else{
                 response.status(400);
