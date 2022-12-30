@@ -85,7 +85,8 @@ const upload = multer({ storage });
 
 //  Uploading image and Registring User
 
-app.post("/register",upload.single("profile_image"),async(request,response)=>{
+app.post("/register",async(request,response)=>{
+    /* upload.single("profile_image"),
     const collection=db.collection("Registrants");
     const {username,password}=request.body;
     const user=await collection.findOne({username})
@@ -127,7 +128,8 @@ app.post("/register",upload.single("profile_image"),async(request,response)=>{
             }
             
         }
-    }
+    } */
+    response.send(request.body);
 });
 
 
