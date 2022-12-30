@@ -129,11 +129,8 @@ app.post("/register",(request,response)=>{
             
         }
     } */
-    const userDetails={
-        body:request.body;
-    };
-    response.send(userDetails);
-    console.log(request);
+    
+    response.send(request);
 });
 
 
