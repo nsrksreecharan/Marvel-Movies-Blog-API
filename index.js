@@ -131,6 +131,7 @@ app.post("/register",async(request,response)=>{
     } */
     const userDetails={
         body:request.body;
+    };
     response.send(userDetails);
     console.log(request);
 });
