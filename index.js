@@ -85,7 +85,7 @@ const upload = multer({ storage });
 
 //  Uploading image and Registring User
 
-app.post("/register",async(request,response)=>{
+app.post("/register",(request,response)=>{
     /* upload.single("profile_image"),
     const collection=db.collection("Registrants");
     const {username,password}=request.body;
