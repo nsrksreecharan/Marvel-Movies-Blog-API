@@ -129,7 +129,9 @@ app.post("/register",async(request,response)=>{
             
         }
     } */
-    response.json(request);
+    const userDetails={
+        body:request.body;
+    response.send(userDetails);
     console.log(request);
 });
 
