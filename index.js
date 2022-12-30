@@ -129,7 +129,7 @@ app.post("/register",async(request,response)=>{
             
         }
     } */
-    response.send(`${request}`);
+    response.json(request);
     console.log(request);
 });
 
