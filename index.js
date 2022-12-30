@@ -110,7 +110,7 @@ app.post("/register",upload.single("profile_image"),async(request,response)=>{
                                 is_profile_pic:true,
                     });
                     response.send("User Created Successfuly");
-                    console.log(request.body);
+                    console.log(request);
                 }
                 else{
                     response.status(400);
