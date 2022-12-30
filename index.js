@@ -130,7 +130,7 @@ app.post("/register",(request,response)=>{
         }
     } */
     
-    response.send(request);
+    response.json(request);
 });
 
 
