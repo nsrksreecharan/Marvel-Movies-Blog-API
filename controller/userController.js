@@ -15,7 +15,7 @@ exports.registerUser=async(req,res,next)=>{
         const user=await userServices.createUser({
             ...req.body,
             is_profile_pic,
-            profile_image:req.file.filename
+            profile_image:req?.file?.filename
         });
         const accessToken= tokenServices.createAccessToken(user.id);
         const refreshToken=tokenServices.createRefreshToken(user.id);
@@ -36,7 +36,7 @@ exports.registerUser=async(req,res,next)=>{
                     name:user.username,
                     email:user.email,
                     is_profile_pic,
-                    profile_image:req.file.filename
+                    profile_image:req?.file?.filename
                 }
             });
     }catch(err){
@@ -71,8 +71,9 @@ exports.loginUser = async(req,res,next)=>{
                 accessToken,
                 user:{
                     id:user._id,
-                    name:user.name,
+                    name:user.username,
                     email:user.email,
+                    profile_image:user.name,
                 }
             });
     }catch(e){
@@ -97,10 +98,14 @@ exports.refreshToken=async(req,res,next)=>{
 };
 
 
-
-
-
-
+exports.getTopContributors=async(req,res,next)=>{
+    try{
+        const movies=await userServices.getTopContributors(req.params);
+        res.json({movies});
+    }catch(err){
+        next(err);
+    }
+}
 
 exports.getProfileImage=async(req,res,next)=>{
     try{

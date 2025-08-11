@@ -14,4 +14,5 @@ router.route("/profile-image/:userId")
         .put(upload.single("profile_image"),userController.updateProfileImage)
         .patch(userController.deleteProfileImage)
 
+router.get("/top-contributor",userController.getTopContributors)
 module.exports=router;
