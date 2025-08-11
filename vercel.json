@@ -7,7 +7,7 @@
         }
     ],
     "env": {
-        "MONGODB_URI": "@MONGODB_URI",
+        "MONGODB_URL": "@MONGODB_URL",
         "JWT_SECRET":"@JWT_SECRET",
         "JWT_REFRESH_SECRET":"@JWT_REFRESH_SECRET"
     },
