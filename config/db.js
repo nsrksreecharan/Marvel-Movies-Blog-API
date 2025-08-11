@@ -6,7 +6,7 @@ let gfs,gridfsBucket;
 
 const connectDB=async()=>{
     try{
-        const connection=await mongoose.connect(process.env.MONGO_URL,{dbName:"test"});
+        const connection=await mongoose.connect(process.env.MONGODB_URI,{dbName:"test"});
         const db=mongoose.connection.db;
 
         gridfsBucket=new GridFSBucket(db,{bucketName:"uploads"});
