@@ -3,7 +3,7 @@ const multer=require("multer");
 const {GridFsStorage}=require("multer-gridfs-storage");
 
 const storage=new GridFsStorage({
-    url:process.env.MONGO_URI,
+    url:process.env.MONGODB_URI,
     file:(req,file)=>{
         if(!file.originalname) throw new Error("Filename missing");
         return {
